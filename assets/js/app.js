@@ -1,19 +1,26 @@
 const accordionItems = document.querySelectorAll(".accordionItem");
+
 accordionItems.forEach((item) => {
   const header = item.querySelector(".accordionHeader");
+  const content = item.querySelector(".accordionInfo");
+  const icon = item.querySelector("img");
+
   header.addEventListener("click", () => {
-    const currentlyActive = document.querySelector(".accordionItem.active");
+    const accordionActive = document.querySelector(".accordionItem.active");
 
-    if (currentlyActive && currentlyActive !== item) {
-      currentlyActive.classList.remove("active");
-      currentlyActive.querySelector(".accordionInfo").classList.add("hidden");
-      currentlyActive.querySelector("img").classList.remove("rotate-180");
+    if (accordionActive && accordionActive !== item) {
+      accordionActive.classList.remove("active");
+      accordionActive.querySelector(".accordionInfo").classList.add("hidden");
+      accordionActive.querySelector("img").classList.remove("rotate-[180deg]");
+      accordionActive.querySelector("img").classList.remove("duration-[.5s]");
+      accordionActive.querySelector("img").src = "./assets/images/svg/plus-icon.svg";
     }
-
     item.classList.toggle("active");
-    const content = item.querySelector(".accordionInfo");
     content.classList.toggle("hidden");
-    const icon = item.querySelector("img");
-    icon.classList.toggle("rotate-180");
+    icon.classList.toggle("rotate-[180deg]");
+    icon.classList.toggle("duration-[.5s]");
+    icon.src = item.classList.contains("active")
+      ? "./assets/images/svg/minus-icon.svg"
+      : "./assets/images/svg/plus-icon.svg";
   });
 });
