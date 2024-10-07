@@ -1,20 +1,28 @@
+/* ==============font family============== */
 @import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap');
+
+/* =================webserve card hover================ */
 .webserv-card:hover{
     color: white;
     background: #1B3353;
     border: #1B3353;
 }
+
+/* ===================solution card hover==================== */
 .solution-card:hover{
     color: white;
     background: #1B3353;
     border: #1B3353;
 }
+
 .solution-card:hover .solution-card-icon{
     background: white;
 }
+
 .solution-card:hover .solution-card-icon path{
     fill: #1B3353;
 }
+
 .solution-card-icon svg{
     transition: all linear 300ms;
     

@@ -1,13 +1,12 @@
-const accordionItems = document.querySelectorAll(".accordionItem");
-
+// =================accordion hover====================
+const accordionItems = document.querySelectorAll(".accordion-item");
 accordionItems.forEach((item) => {
-  const header = item.querySelector(".accordionHeader");
+  const header = item.querySelector(".accordion-header");
   const content = item.querySelector(".accordionInfo");
   const icon = item.querySelector("img");
 
   header.addEventListener("click", () => {
-    const accordionActive = document.querySelector(".accordionItem.active");
-
+    const accordionActive = document.querySelector(".accordion-item.active");
     if (accordionActive && accordionActive !== item) {
       accordionActive.classList.remove("active");
       accordionActive.querySelector(".accordionInfo").classList.add("hidden");
@@ -15,6 +14,7 @@ accordionItems.forEach((item) => {
       accordionActive.querySelector("img").classList.remove("duration-[.5s]");
       accordionActive.querySelector("img").src = "./assets/images/svg/plus-icon.svg";
     }
+
     item.classList.toggle("active");
     content.classList.toggle("hidden");
     icon.classList.toggle("rotate-[180deg]");
